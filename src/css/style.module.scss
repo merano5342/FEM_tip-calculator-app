@@ -1,0 +1,237 @@
+@import 'reset';
+
+// * {
+//   input:focus {
+//     border-color: var(--strong-cyan);
+
+//   }
+// }
+
+:root {
+  --strong-cyan: hsl(172, 67%, 45%);
+
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  height: 100vh;
+  background-color: var(--light-grayish-cyan);
+  font-family: 'Space Mono', monospace;
+
+  input,
+  button {
+    font-family: 'Space Mono', monospace;
+    color: var(--very-dark-cyan);
+    font-size: 24px;
+
+    border: none;
+    border-radius: 5px;
+    height: 46px;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+
+  input {
+    text-align: right;
+    padding-right: 14px;
+    width: 100%;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0;
+    /* <-- Apparently some margin are still there even though it's hidden */
+  }
+
+  input[type=number] {
+    -moz-appearance: textfield;
+    /* Firefox */
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    align-self: center;
+    color: var(--dark-grayish-cyan);
+    font-size: 20px;
+    letter-spacing: 8px;
+    line-height: 30px;
+    margin: 40px;
+  }
+}
+
+
+.container {
+  display: flex;
+  flex-flow: column wrap;
+  background: var(--white);
+  border-radius: 26px;
+  padding: 24px;
+}
+
+.bills {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--dark-grayish-cyan);
+
+  padding: 20px;
+
+  .billContainer {
+    margin: 10px 0;
+
+    .billTitle {
+      margin-bottom: 20px;
+    }
+
+    input {
+      background-color: var(--very-light-grayish-cyan);
+      margin-bottom: 10px;
+      // width: 400px;
+      // width: 500px;
+      // no-repeat scroll 7px 7px;
+      // padding-left: 30px;
+      // &::before {
+      //   background: url(../assets/images/icon-dollar.svg);
+      //   padding-left: 30px;
+      //   height: 10px;
+      // }
+    }
+
+    .textRed {
+      color: red;
+    }
+  }
+
+  // .bill-input::before {
+  //   background: url(../assets/images/icon-dollar.svg)no-repeat scroll 7px 7px;
+  //   ;
+  //   padding-left: 30px;
+
+  // }
+
+
+
+
+
+  .tipBtns {
+    display: grid;
+    grid-template: auto/ 1fr 1fr;
+    grid-gap: 10px;
+
+
+    .tipBtn {
+      background-color: var(--very-dark-cyan);
+      color: var(--white);
+      padding: 0 16px;
+
+      &[data-active="true"] {
+        background-color: var(--strong-cyan);
+        color: var(--very-dark-cyan);
+      }
+
+      &:hover {
+        background-color: var(--light-grayish-cyan);
+        color: var(--very-dark-cyan);
+      }
+    }
+  }
+
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--very-dark-cyan);
+  height: 220px;
+  border-radius: 20px;
+
+  padding: 30px;
+
+  h2 {
+    color: var(--white);
+  }
+
+  p {
+    color: var(--grayish-cyan);
+    font-size: 12px;
+    margin: 10px 0;
+  }
+
+  .resultsTop {
+    margin: 20px 0;
+
+    .resultsTopLine {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+
+      .price {
+        font-size: 30px;
+        color: var(--strong-cyan);
+      }
+    }
+  }
+
+  .resetBtn {
+    color: var(--very-dark-cyan);
+    text-transform: uppercase;
+    font-size: 18px;
+
+    background-color: var(--strong-cyan);
+
+    &:hover {
+      background-color: var(--light-grayish-cyan);
+    }
+  }
+
+}
+
+
+.attribution {
+  color: var(--dark-grayish-cyan);
+  font-size: 12px;
+  text-align: center;
+  margin: 20px;
+
+  a {
+    color: var(--strong-cyan);
+  }
+}
+
+// RWD
+
+@media screen and (min-width: 600px) {
+  .container {
+    display: grid;
+    grid-template: auto / 1fr 1fr;
+    grid-gap: 20px;
+
+    margin: 0 auto;
+  }
+
+  .bills {
+    .tipBtns {
+      grid-template: auto / repeat(3, 1fr);
+    }
+  }
+
+
+  .results {
+    height: auto;
+  }
+}

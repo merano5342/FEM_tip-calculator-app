@@ -1,0 +1,11 @@
+
+*.sketch
+*.fig
+*.xd
+
+design
+.vscode
+
+.DS_Store
+.prettierignore
+node_modules
