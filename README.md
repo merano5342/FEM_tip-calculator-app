@@ -1,6 +1,7 @@
 # Frontend Mentor - Tip calculator app solution
 
-This is a solution to the [Tip calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+This is a solution to the [Tip calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX).
+
 
 ## Table of contents
 
@@ -18,7 +19,7 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
 
 
 ## Overview
-
+![image](https://github.com/merano5342/FEM_tip-calculator-app/blob/main/desktop-pic_tip-app.png)
 ### The challenge
 
 Users should be able to:
@@ -48,5 +49,5 @@ Users should be able to:
 
 
 ### What I learned
-
+- How to use React reducer to control calculation results 
 

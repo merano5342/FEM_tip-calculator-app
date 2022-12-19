@@ -10,7 +10,11 @@ const initialState = {
   total: 0
 };
 
-const mathRounded = (num) => Math.round((num + Number.EPSILON) * 100) / 100;
+const mathRounded = (num) => {
+  const value = Math.round((num + Number.EPSILON) * 100) / 100
+  return value === Infinity || !value ? 0 : value
+}
+
 
 const calcTotalAmount = (bill, numberOfPeople, tipPercent) => {
   const total = mathRounded(bill * (1 + tipPercent) / numberOfPeople)
@@ -21,6 +25,8 @@ const calcTipAmount = (bill, numberOfPeople, tipPercent) => {
   const tipAmount = mathRounded(bill * tipPercent / numberOfPeople)
   return tipAmount
 }
+
+
 
 const billReducer = (state, action) => {
   switch (action.type) {
@@ -39,7 +45,7 @@ const billReducer = (state, action) => {
       }
     }
     case 'APPLY_TIPS': {
-      const tipPercent = (action.payload)
+      const tipPercent = action.payload
       return {
         ...state,
         tipPercent

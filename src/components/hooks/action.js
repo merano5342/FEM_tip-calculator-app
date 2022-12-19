@@ -1,14 +1,14 @@
-export const actionSetBill = (e) => {
+export const actionSetBill = (bill) => {
   return {
     type: 'SET_BILL',
-    payload: e.target.value
+    payload: bill
   }
 }
 
-export const actionSetPeople = (e) => {
+export const actionSetPeople = (numberOfPeople) => {
   return {
     type: 'SET_PEOPLE',
-    payload: e.target.value
+    payload: numberOfPeople
   }
 }
 

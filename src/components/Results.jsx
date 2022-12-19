@@ -13,7 +13,7 @@ const Results = (props) => {
             <p>/ person</p>
           </div>
           <div className={style.price}>
-            ${tipAmount || 0}
+            ${tipAmount}
           </div>
         </div>
         <div className={style.resultsTopLine}>
@@ -22,7 +22,7 @@ const Results = (props) => {
             <p>/ person</p>
           </div>
           <div className={style.price}>
-            ${total || 0}
+            ${total}
           </div>
         </div>
       </div>

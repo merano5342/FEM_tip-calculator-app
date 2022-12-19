@@ -9,6 +9,7 @@
 
 :root {
   --strong-cyan: hsl(172, 67%, 45%);
+  --red: hsl(9, 100%, 36%);
 
   --very-dark-cyan: hsl(183, 100%, 15%);
   --dark-grayish-cyan: hsl(186, 14%, 43%);
@@ -16,7 +17,24 @@
   --light-grayish-cyan: hsl(185, 41%, 84%);
   --very-light-grayish-cyan: hsl(189, 41%, 97%);
   --white: hsl(0, 0%, 100%);
+
+  // img
+  // --icon-dollar: 
 }
+
+input {
+  &:focus {
+    outline: 2px solid var(--strong-cyan);
+  }
+
+  &[data-error="true"] {
+    outline: 2px solid var(--red);
+  }
+}
+
+
+
+
 
 body {
   height: 100vh;
@@ -43,6 +61,8 @@ body {
     text-align: right;
     padding-right: 14px;
     width: 100%;
+    background-color: var(--very-light-grayish-cyan);
+    margin-bottom: 10px;
   }
 
   input::-webkit-outer-spin-button,
@@ -58,6 +78,30 @@ body {
     /* Firefox */
   }
 }
+
+.billInput::before {
+  content: url(../assets/images/icon-dollar.svg);
+}
+
+.peopleNumInput::before {
+  content: url(../assets/images/icon-person.svg);
+}
+
+.billInput,
+.peopleNumInput {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 16px;
+    height: 100px;
+    width: 100px;
+  }
+}
+
+
+
 
 .wrapper {
   display: flex;
@@ -78,8 +122,10 @@ body {
   display: flex;
   flex-flow: column wrap;
   background: var(--white);
+  max-width: 800px;
   border-radius: 26px;
   padding: 24px;
+  margin: 0 auto;
 }
 
 .bills {
@@ -90,31 +136,29 @@ body {
 
   padding: 20px;
 
-  .billContainer {
+  .billBox {
+    position: relative;
     margin: 10px 0;
-
-    .billTitle {
-      margin-bottom: 20px;
-    }
-
-    input {
-      background-color: var(--very-light-grayish-cyan);
-      margin-bottom: 10px;
-      // width: 400px;
-      // width: 500px;
-      // no-repeat scroll 7px 7px;
-      // padding-left: 30px;
-      // &::before {
-      //   background: url(../assets/images/icon-dollar.svg);
-      //   padding-left: 30px;
-      //   height: 10px;
-      // }
-    }
-
-    .textRed {
-      color: red;
-    }
   }
+
+
+  .billTitle {
+    margin-bottom: 20px;
+  }
+
+
+
+  .textRed {
+    color: var(--red);
+    font-size: 10px;
+    text-align: right;
+    position: absolute;
+    top: 2px;
+    right: 0;
+  }
+
+
+
 
   // .bill-input::before {
   //   background: url(../assets/images/icon-dollar.svg)no-repeat scroll 7px 7px;
@@ -136,7 +180,7 @@ body {
     .tipBtn {
       background-color: var(--very-dark-cyan);
       color: var(--white);
-      padding: 0 16px;
+
 
       &[data-active="true"] {
         background-color: var(--strong-cyan);
@@ -150,6 +194,9 @@ body {
     }
   }
 
+  .inputBox {
+    margin-right: 14px;
+  }
 }
 
 .results {
@@ -215,11 +262,11 @@ body {
 
 // RWD
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 660px) {
   .container {
     display: grid;
     grid-template: auto / 1fr 1fr;
-    grid-gap: 20px;
+    grid-gap: 10px;
 
     margin: 0 auto;
   }
