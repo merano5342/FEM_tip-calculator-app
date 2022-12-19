@@ -19,7 +19,10 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
 
 
 ## Overview
-![image](https://github.com/merano5342/FEM_tip-calculator-app/blob/main/desktop-pic_tip-app.png)
+
+### screenshot  
+![image](https://github.com/merano5342/FEM_tip-calculator-app/blob/main/desktop-pic_tip-app.png)  
+
 ### The challenge
 
 Users should be able to:
@@ -32,8 +35,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [live site URL](https://merano5342.github.io/FEM_tip-calculator-app/)
 
 ## My process
 
