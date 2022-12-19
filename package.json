@@ -3,7 +3,7 @@
   "version": "1.0.0-2022",
   "description": "react-project",
   "author": "merano merano5342@gmail.com",
-  "homepage": "https://merano5342.github.io/FEM_tip-calculator-app",
+  "homepage": "https://merano5342.github.io/fem_tip-calculator-app",
   "scripts": {
     "start": "cross-env DISABLE_ESLINT_PLUGIN=true react-scripts start",
     "build": "react-scripts build",
